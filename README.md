@@ -17,12 +17,12 @@ Landing de una sola página (`index.html`) con estructura semántica (`header`, 
 
 ## Decisiones de diseño
 
-- **Paleta negro/rojo, líneas angulares:** en vez del esquema clásico de bordes redondeados, las tarjetas y botones usan `clip-path` para cortar una esquina en diagonal, buscando una estética más industrial/técnica.
+- **Paleta negro/rojo, líneas angulares:** Se utiliza `clip-path` para cortar una esquina en diagonal, buscando una estética más industrial/técnica en los botones y las cards.
 - **Tipografía:** `Oswald` (condensada, en mayúsculas) para títulos + `IBM Plex Mono` para cuerpo de texto, reforzando el perfil técnico del sitio. Ambas cargadas desde Google Fonts.
-- **Layout:** combino **Flexbox** para elementos de una sola fila con tamaño variable (header, footer) y **Grid** para colecciones de tarjetas que necesitan reacomodarse en filas y columnas según el ancho disponible (habilidades, hobbies, columnas de contacto) — cada tecnología se usa donde mejor resuelve el problema de layout específico, en vez de usar una sola para todo.
-- **Variables CSS** (`:root`) centralizan colores y tipografías para mantener coherencia visual y facilitar cambios futuros.
-- **Animación:** entrada con `fadeSlideUp` en el hero (fade + desplazamiento vertical), más transiciones de hover en tarjetas, links y botones. Se respeta `prefers-reduced-motion` para usuarios que prefieren minimizar animaciones.
-- **Responsive:** layout fluido con `clamp()` para tipografía y `grid-template-columns: repeat(auto-fill, minmax(...))` para que las tarjetas se reacomoden solas sin depender de breakpoints fijos; un único media query cubre ajustes finos en mobile.
+- **Layout:** Combino **Flexbox** para elementos de una sola fila con tamaño variable (header, footer) y **Grid** para colecciones de tarjetas que necesitan reacomodarse en filas y columnas según el ancho disponible (habilidades, hobbies, columnas de contacto). Se mezclan ambas por facilidad de uso en cada caso.
+- **Variables CSS** Centralizan colores y tipografías para mantener coherencia visual y facilitar cambios futuros.
+- **Animación:** Entrada con `fadeSlideUp` en el hero (fade + desplazamiento vertical), más transiciones de hover en tarjetas, links y botones. Se respeta `prefers-reduced-motion` para usuarios que prefieren minimizar animaciones (este último punto, detectado en un chequeo con la IA).
+- **Responsive:** Layout fluido con `clamp()` para tipografía y `grid-template-columns: repeat(auto-fill, minmax(...))` para que las tarjetas se reacomoden solas sin depender de breakpoints fijos; un único media query cubre ajustes finos en mobile.
 - **Accesibilidad:** `alt` descriptivo en la imagen, `aria-label` en la navegación y el formulario, foco visible por teclado (`:focus-visible`).
 
 ## Imágenes
