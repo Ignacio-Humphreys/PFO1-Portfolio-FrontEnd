@@ -1,0 +1,462 @@
+/* ==========================================================================
+   VARIABLES CSS
+   Centralizamos colores y tipografías acá: cambiar un valor lo propaga
+   a todo el sitio sin tocar cada regla por separado.
+   ========================================================================== */
+:root {
+  --bg-primary: #0a0a0a;
+  --bg-panel: #151515;
+  --red: #e8342a;
+  --red-hover: #ff4438;
+  --text-primary: #f2f0ec;
+  --text-secondary: #9a9a9a;
+  --text-muted: #5a5a5a;
+  --border-hairline: #2a2a2a;
+
+  --font-display: 'Oswald', sans-serif;
+  --font-body: 'IBM Plex Mono', monospace;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--red);
+  outline-offset: 3px;
+}
+
+/* ==========================================================================
+   HEADER — usa Flexbox: es ideal acá porque es una sola fila con
+   elementos de tamaño variable (logo + lista de links) que hay que alinear.
+   ========================================================================== */
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 3rem;
+  border-bottom: 1px solid var(--border-hairline);
+  position: sticky;
+  top: 0;
+  background: rgba(10, 10, 10, 0.92);
+  backdrop-filter: blur(6px);
+  z-index: 10;
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.4rem;
+  letter-spacing: 0.05em;
+  color: var(--red);
+}
+
+.nav-list {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-list a {
+  text-decoration: none;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  transition: color 0.2s ease;
+}
+
+.nav-list a:hover {
+  color: var(--red);
+}
+
+.nav-github {
+  border: 1px solid var(--border-hairline);
+  padding: 0.4rem 0.8rem;
+}
+
+.nav-github:hover {
+  border-color: var(--red);
+}
+
+/* ==========================================================================
+   HERO — animación de entrada propia (fade + slide-up)
+   ========================================================================== */
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 75vh;
+  padding: 4rem 3rem;
+}
+
+.hero__rule {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--red);
+}
+
+.hero__content {
+  max-width: 780px;
+  padding-left: 2rem;
+  animation: fadeSlideUp 0.7s ease-out both;
+}
+
+.eyebrow {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--text-muted);
+  margin-bottom: 1.25rem;
+}
+
+.hero__title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(2.2rem, 6vw, 4rem);
+  text-transform: uppercase;
+  line-height: 1.05;
+}
+
+.accent {
+  color: var(--red);
+}
+
+.hero__desc {
+  margin-top: 1.5rem;
+  max-width: 540px;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+
+.btn-primary {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 0.85rem 1.9rem;
+  background: var(--red);
+  color: var(--bg-primary);
+  text-decoration: none;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border: none;
+  cursor: pointer;
+  clip-path: polygon(0 0, 100% 0, 100% 70%, 92% 100%, 0 100%);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.btn-primary:hover {
+  transform: translateX(4px);
+  background: var(--red-hover);
+}
+
+/* ==========================================================================
+   TÍTULOS DE SECCIÓN (reutilizado en todas las secciones)
+   ========================================================================== */
+.section-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 0 3rem;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+}
+
+.section-title__num {
+  color: var(--red);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+section {
+  padding: 4rem 0;
+}
+
+/* ==========================================================================
+   SOBRE MÍ
+   ========================================================================== */
+.about__grid {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  padding: 0 3rem;
+  flex-wrap: wrap;
+}
+
+.about__img {
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 24px), calc(100% - 24px) 100%, 0 100%);
+  flex-shrink: 0;
+}
+
+.about__text {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.85;
+  max-width: 620px;
+}
+
+/* ==========================================================================
+   HABILIDADES — usa Grid: a diferencia del header, acá necesitamos
+   organizar tarjetas en dos dimensiones (filas Y columnas) que se
+   reacomodan solas según el ancho disponible. Grid resuelve eso con
+   una sola propiedad (auto-fill/minmax), sin media queries manuales.
+   ========================================================================== */
+.skills__grid {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.25rem;
+  padding: 0 3rem;
+}
+
+.skill-card,
+.hobby-card {
+  background: var(--bg-panel);
+  border: 1px solid var(--border-hairline);
+  border-left: 3px solid var(--red);
+  padding: 1.5rem;
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 18px), calc(100% - 18px) 100%, 0 100%);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.skill-card:hover,
+.hobby-card:hover {
+  transform: translateY(-4px);
+  border-left-color: var(--red-hover);
+}
+
+.skill-card__num {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.skill-card h3,
+.hobby-card h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 1.05rem;
+  margin-bottom: 0.6rem;
+  letter-spacing: 0.02em;
+}
+
+.skill-card p,
+.hobby-card p {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  line-height: 1.7;
+}
+
+/* ==========================================================================
+   HOBBIES — misma técnica de Grid que habilidades, para consistencia visual
+   ========================================================================== */
+.hobbies__grid {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.25rem;
+  padding: 0 3rem;
+}
+
+/* ==========================================================================
+   CONTACTO — Grid para las dos columnas (links / formulario)
+   ========================================================================== */
+.contact__grid {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 3rem;
+  padding: 0 3rem;
+}
+
+.contact__links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact__links a {
+  text-decoration: none;
+  font-size: 0.95rem;
+  border-bottom: 1px solid var(--border-hairline);
+  padding-bottom: 0.5rem;
+  display: inline-block;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.contact__links a:hover {
+  color: var(--red);
+  border-color: var(--red);
+}
+
+.contact__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.form-field label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+}
+
+.form-field input,
+.form-field textarea {
+  background: var(--bg-panel);
+  border: 1px solid var(--border-hairline);
+  color: var(--text-primary);
+  padding: 0.7rem 0.9rem;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  transition: border-color 0.2s ease;
+}
+
+.form-field input:focus,
+.form-field textarea:focus {
+  border-color: var(--red);
+}
+
+.contact__form .btn-primary {
+  align-self: flex-start;
+  margin-top: 0.5rem;
+}
+
+/* ==========================================================================
+   FOOTER — Flexbox otra vez: contenido centrado en una sola línea
+   ========================================================================== */
+.site-footer {
+  position: relative;
+  padding: 3rem;
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.footer__rule {
+  position: absolute;
+  top: 0;
+  left: 3rem;
+  right: 3rem;
+  height: 1px;
+  background: var(--border-hairline);
+}
+
+.site-footer p {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+.site-footer a {
+  color: var(--red);
+  text-decoration: none;
+}
+
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+@media (max-width: 640px) {
+  .site-header {
+    padding: 1.25rem 1.5rem;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .nav-list {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .hero,
+  .about__grid,
+  .section-title,
+  .skills__grid,
+  .hobbies__grid,
+  .contact__grid {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .hero__content {
+    padding-left: 1rem;
+  }
+
+  .contact__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about__grid {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer__rule {
+    left: 1.5rem;
+    right: 1.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}

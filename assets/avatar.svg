@@ -1,0 +1,7 @@
+<svg viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="avatarTitle">
+  <title id="avatarTitle">Ilustración abstracta angular en negro y rojo</title>
+  <rect width="220" height="220" fill="#151515"/>
+  <polygon points="0,0 220,0 220,150 150,220 0,220" fill="#0a0a0a" stroke="#2a2a2a" stroke-width="1"/>
+  <polygon points="40,180 100,60 160,180 130,180 100,120 70,180" fill="#e8342a"/>
+  <rect x="0" y="0" width="6" height="220" fill="#e8342a"/>
+</svg>

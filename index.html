@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio personal de Ignacio Tomás Humphreys — estudiante de Desarrollo de Software y desarrollador full-stack.">
+  <meta name="author" content="Ignacio Tomás Humphreys">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Ignacio Humphreys | Portfolio</title>
+</head>
+<body>
+
+  <!-- HEADER: contiene la marca personal y la navegación principal del sitio -->
+  <header class="site-header">
+    <span class="logo">IH.</span>
+    <nav aria-label="Navegación principal">
+      <ul class="nav-list">
+        <li><a href="#sobre-mi">Sobre mí</a></li>
+        <li><a href="#habilidades">Habilidades</a></li>
+        <li><a href="#hobbies">Hobbies</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+        <li><a href="https://github.com/Ignacio-Humphreys" target="_blank" rel="noopener noreferrer" class="nav-github">GitHub ↗</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- PRESENTACIÓN -->
+    <section class="hero" id="inicio">
+      <div class="hero__rule" aria-hidden="true"></div>
+      <div class="hero__content">
+        <p class="eyebrow">Desarrollo de Software — Buenos Aires, AR</p>
+        <h1 class="hero__title">
+          Ignacio Tomás
+          <br>
+          <span class="accent">Humphreys</span>
+        </h1>
+        <p class="hero__desc">
+          Trabajo como analista de gestión de la información,
+          y estoy formándome como Técnico en Desarrollo de Software. Me interesa
+          construir productos de principio a fin: desde el dato crudo hasta la interfaz final,
+          con principal interés en el Backend de los proyectos.
+        </p>
+        <a href="#contacto" class="btn-primary">Contactarme</a>
+      </div>
+    </section>
+
+    <!-- ABOUT ME -->
+    <section id="sobre-mi" class="about">
+      <h2 class="section-title"><span class="section-title__num">01</span> Sobre mí</h2>
+      <div class="about__grid">
+        <img src="assets/avatar.svg" alt="Ilustración abstracta representando el perfil de Ignacio, en tonos negro y rojo" class="about__img" width="220" height="220">
+        <p class="about__text">
+          Soy un analista de datos con más de 4 años de experiencia, experimentado en una amplia
+          variedad de habilidades que van desde Python y SQL hasta desarrollo web y mobile
+          y modelos de machine learning.
+        </p>
+      </div>
+    </section>
+
+    <!-- SECCIÓN HABILIDADES -->
+    <section id="habilidades" class="skills">
+      <h2 class="section-title"><span class="section-title__num">02</span> Habilidades</h2>
+      <ul class="skills__grid">
+        <li class="skill-card">
+          <span class="skill-card__num">01</span>
+          <h3>Python</h3>
+          <p>Automatización de ETL, scripts batch y procesos entre plataformas cloud.</p>
+        </li>
+        <li class="skill-card">
+          <span class="skill-card__num">02</span>
+          <h3>BigQuery &amp; SQL</h3>
+          <p>Consultas y tablas externas para KPIs de retención y NPS omnicanal.</p>
+        </li>
+        <li class="skill-card">
+          <span class="skill-card__num">03</span>
+          <h3>Power BI</h3>
+          <p>Reportes automatizados, configuración de gateway y publicación externa.</p>
+        </li>
+        <li class="skill-card">
+          <span class="skill-card__num">04</span>
+          <h3>Node.js &amp; Express</h3>
+          <p>APIs REST con arquitectura en capas (rutas, controllers, middlewares).</p>
+        </li>
+        <li class="skill-card">
+          <span class="skill-card__num">05</span>
+          <h3>React</h3>
+          <p>Interfaces basadas en componentes, consumo de APIs propias.</p>
+        </li>
+        <li class="skill-card">
+          <span class="skill-card__num">06</span>
+          <h3>Kotlin &amp; Android</h3>
+          <p>Apps móviles con persistencia local en SQLite.</p>
+        </li>
+        <li class="skill-card">
+          <span class="skill-card__num">07</span>
+          <h3>Web Development</h3>
+          <p>Desarrollo de aplicaciones web responsivas con HTML, CSS, JavaScript y Python.</p>
+        </li>
+      </ul>
+    </section>
+
+    <!-- PERSONAL -->
+    <section id="hobbies" class="hobbies">
+      <h2 class="section-title"><span class="section-title__num">03</span> Hobbies</h2>
+      <ul class="hobbies__grid">
+        <li class="hobby-card">
+          <h3>Gaming</h3>
+          <p>Juego videojuegos desde la época de la Sega Dreamcast, convirtiéndose en mi hobby predilecto.</p>
+        </li>
+        <li class="hobby-card">
+          <h3>Música</h3>
+          <p>Mi otra gran pasión. Escritor y guitarrista, con un gran amor por el rock y el metal.</p>
+        </li>
+        <li class="hobby-card">
+          <h3>Fútbol</h3>
+          <p>Hincha de <strong style="color: #06ac00c0;">Banfield</strong> de nacimiento, estando en los mejores y peores momentos de la institución.</p>
+        </li>
+      </ul>
+    </section>
+
+    <!-- SECCIÓN CONTACTO -->
+    <section id="contacto" class="contact">
+      <h2 class="section-title"><span class="section-title__num">04</span> Contacto</h2>
+
+      <div class="contact__grid">
+        <ul class="contact__links">
+          <li>
+            <a href="mailto:humphreysignacio@gmail.com">humphreysignacio@gmail.com</a>
+          </li>
+          <li>
+            <a href="https://github.com/Ignacio-Humphreys" target="_blank" rel="noopener noreferrer">github.com/Ignacio-Humphreys ↗</a>
+          </li>
+        </ul>
+
+    <form class="contact__form" id="contactForm" aria-label="Formulario de contacto">
+    <div class="form-field">
+      <label for="nombre">Nombre</label>
+      <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+    </div>
+
+    <div class="form-field">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="tu@email.com" required>
+    </div>
+
+    <div class="form-field">
+      <label for="mensaje">Mensaje</label>
+      <textarea id="mensaje" name="mensaje" rows="4" placeholder="Escribí tu mensaje..." required></textarea>
+    </div>
+
+    <button type="submit" class="btn-primary">Enviar</button>
+  </form>
+
+  <script>
+  document.getElementById("contactForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const nombre = document.getElementById("nombre").value;
+      const email = document.getElementById("email").value;
+      const mensaje = document.getElementById("mensaje").value;
+
+      const asunto = encodeURIComponent("Nuevo mensaje de contacto");
+      const cuerpo = encodeURIComponent(
+          `Nombre: ${nombre}\n` +
+          `Email: ${email}\n\n` +
+          `Mensaje:\n${mensaje}`
+      );
+
+      window.location.href =
+          `mailto:humphreysignacio@gmail.com?subject=${asunto}&body=${cuerpo}`;
+  });
+  </script>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer__rule" aria-hidden="true"></div>
+    <p>Ignacio Tomás Humphreys · <a href="https://github.com/Ignacio-Humphreys" target="_blank" rel="noopener noreferrer">GitHub</a></p>
+  </footer>
+
+</body>
+</html>
