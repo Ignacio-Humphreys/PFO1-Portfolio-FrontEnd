@@ -1,8 +1,6 @@
-/* ==========================================================================
-   VARIABLES CSS
-   Centralizamos colores y tipografías acá: cambiar un valor lo propaga
-   a todo el sitio sin tocar cada regla por separado.
-   ========================================================================== */
+/* =====================
+   VARIABLES 
+   ===================== */
 :root {
   --bg-primary: #0a0a0a;
   --bg-panel: #151515;
@@ -49,10 +47,9 @@ a {
   outline-offset: 3px;
 }
 
-/* ==========================================================================
-   HEADER — usa Flexbox: es ideal acá porque es una sola fila con
-   elementos de tamaño variable (logo + lista de links) que hay que alinear.
-   ========================================================================== */
+/* ======================
+   HEADER (Flexbox)
+   ====================== */
 .site-header {
   display: flex;
   justify-content: space-between;
@@ -101,9 +98,9 @@ a {
   border-color: var(--red);
 }
 
-/* ==========================================================================
-   HERO — animación de entrada propia (fade + slide-up)
-   ========================================================================== */
+/* ===========================
+   HERO (fade + slide-up)
+   =========================== */
 @keyframes fadeSlideUp {
   from {
     opacity: 0;
@@ -189,9 +186,9 @@ a {
   background: var(--red-hover);
 }
 
-/* ==========================================================================
+/* =============================================================
    TÍTULOS DE SECCIÓN (reutilizado en todas las secciones)
-   ========================================================================== */
+   ============================================================= */
 .section-title {
   font-family: var(--font-display);
   font-weight: 600;
@@ -216,9 +213,9 @@ section {
   padding: 4rem 0;
 }
 
-/* ==========================================================================
+/* ==================
    SOBRE MÍ
-   ========================================================================== */
+   ================== */
 .about__grid {
   display: flex;
   align-items: center;
@@ -239,12 +236,9 @@ section {
   max-width: 620px;
 }
 
-/* ==========================================================================
-   HABILIDADES — usa Grid: a diferencia del header, acá necesitamos
-   organizar tarjetas en dos dimensiones (filas Y columnas) que se
-   reacomodan solas según el ancho disponible. Grid resuelve eso con
-   una sola propiedad (auto-fill/minmax), sin media queries manuales.
-   ========================================================================== */
+/* ================================
+   HABILIDADES (Grid)
+   ================================ */
 .skills__grid {
   list-style: none;
   display: grid;
@@ -293,9 +287,9 @@ section {
   line-height: 1.7;
 }
 
-/* ==========================================================================
-   HOBBIES — misma técnica de Grid que habilidades, para consistencia visual
-   ========================================================================== */
+/* ==========================
+   HOBBIES
+   ========================== */
 .hobbies__grid {
   list-style: none;
   display: grid;
@@ -304,9 +298,9 @@ section {
   padding: 0 3rem;
 }
 
-/* ==========================================================================
+/* ===============================================================
    CONTACTO — Grid para las dos columnas (links / formulario)
-   ========================================================================== */
+   =============================================================== */
 .contact__grid {
   display: grid;
   grid-template-columns: 1fr 1.4fr;
@@ -375,9 +369,9 @@ section {
   margin-top: 0.5rem;
 }
 
-/* ==========================================================================
-   FOOTER — Flexbox otra vez: contenido centrado en una sola línea
-   ========================================================================== */
+/* =======================
+   FOOTER
+   ======================= */
 .site-footer {
   position: relative;
   padding: 3rem;
@@ -406,9 +400,9 @@ section {
   text-decoration: none;
 }
 
-/* ==========================================================================
+/* ===================
    RESPONSIVE
-   ========================================================================== */
+   =================== */
 @media (max-width: 640px) {
   .site-header {
     padding: 1.25rem 1.5rem;
